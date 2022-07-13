@@ -1,2 +1,2 @@
-# memorygame
-Memory game basic
+# Memory Game
+Memory game with theme "Brasileirão série A"
