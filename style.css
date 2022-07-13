@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: rgb(13, 184, 169);
+}
+
+.memoryGame {
+  height: 640px;
+  width: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.card {
+  height: calc(33.333% - 10px);
+  width: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d; /*Não deixa o elemento achatado no plano*/
+  transition: transform 0.9s;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.cardFront,
+.cardBack {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #ffffff;
+  backface-visibility: hidden; /*retira o verso do elemento*/
+}
+
+.cardFront {
+  transform: rotateY(180deg);
+}
+
+/*ANIMAÇÃO DO FLIP CARD*/
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.botaoReiniciar {
+  padding: 15px 5px;
+  display: flex;
+  position: fixed;
+  left: 120%;
+  height: 50px;
+  width: 130px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(227, 228, 218);
+  background-color: rgb(82, 185, 90);
+  border: 1px solid rgb(8, 238, 27);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botaoReiniciar:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
